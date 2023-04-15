@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EpisodesVC.swift
 //  RickAndMortyApp
 //
 //  Created by Gilang-M1Pro on 15/04/23.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EpisodesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .blue
     }
-
-
 }
-
