@@ -11,6 +11,7 @@ class EpisodesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .systemBackground
+        self.title = "Episodes"
     }
 }

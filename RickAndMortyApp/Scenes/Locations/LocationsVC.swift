@@ -11,6 +11,7 @@ class LocationsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .green
+        self.view.backgroundColor = .systemBackground
+        self.title = "Locations"
     }
 }

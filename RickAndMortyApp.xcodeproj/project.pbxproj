@@ -25,6 +25,8 @@
 		E9E72A9A29EAC2D500DAC505 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E72A9829EAC2D500DAC505 /* SettingsVC.xib */; };
 		E9E72A9D29EAC2EC00DAC505 /* CharactersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72A9B29EAC2EC00DAC505 /* CharactersVC.swift */; };
 		E9E72A9E29EAC2EC00DAC505 /* CharactersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E72A9C29EAC2EC00DAC505 /* CharactersVC.xib */; };
+		E9E72AA029EAD33E00DAC505 /* CharactersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72A9F29EAD33E00DAC505 /* CharactersVM.swift */; };
+		E9E72AA429EAD8F100DAC505 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AA329EAD8F100DAC505 /* CharacterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E9E72A9829EAC2D500DAC505 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		E9E72A9B29EAC2EC00DAC505 /* CharactersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVC.swift; sourceTree = "<group>"; };
 		E9E72A9C29EAC2EC00DAC505 /* CharactersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersVC.xib; sourceTree = "<group>"; };
+		E9E72A9F29EAD33E00DAC505 /* CharactersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVM.swift; sourceTree = "<group>"; };
+		E9E72AA329EAD8F100DAC505 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		E9E72A8029EAC0CD00DAC505 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9E72AA329EAD8F100DAC505 /* CharacterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			children = (
 				E9E72A9B29EAC2EC00DAC505 /* CharactersVC.swift */,
 				E9E72A9C29EAC2EC00DAC505 /* CharactersVC.xib */,
+				E9E72A9F29EAD33E00DAC505 /* CharactersVM.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -356,8 +362,10 @@
 				E9E72A8929EAC15500DAC505 /* MainTabVC.swift in Sources */,
 				E9E72A8729EAC0F900DAC505 /* Networking.swift in Sources */,
 				E9E72A5129EABC8000DAC505 /* AppDelegate.swift in Sources */,
+				E9E72AA429EAD8F100DAC505 /* CharacterModel.swift in Sources */,
 				E9E72A5329EABC8000DAC505 /* SceneDelegate.swift in Sources */,
 				E9E72A9D29EAC2EC00DAC505 /* CharactersVC.swift in Sources */,
+				E9E72AA029EAD33E00DAC505 /* CharactersVM.swift in Sources */,
 				E9E72A9129EAC2BE00DAC505 /* LocationsVC.swift in Sources */,
 				E9E72A8529EAC0F100DAC505 /* Constants.swift in Sources */,
 				E9E72A9929EAC2D500DAC505 /* SettingsVC.swift in Sources */,

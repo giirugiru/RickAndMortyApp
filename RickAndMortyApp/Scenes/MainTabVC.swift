@@ -16,15 +16,20 @@ final class MainTabVC: UITabBarController {
     
     private func setup() {
         setViewControllers([
-        makeVC(vc: CharactersVC(), title: "Characters"),
-        makeVC(vc: LocationsVC(), title: "Locations"),
-        makeVC(vc: EpisodesVC(), title: "Episodes")
+        makeVC(vc: CharactersVC(), title: "Characters", icon: UIImage(systemName: "person")),
+        makeVC(vc: LocationsVC(), title: "Locations", icon: UIImage(systemName: "globe")),
+        makeVC(vc: EpisodesVC(), title: "Episodes", icon: UIImage(systemName: "tv"))
         ], animated: true)
     }
     
-    private func makeVC(vc: UIViewController, title: String) -> UINavigationController {
+    private func makeVC(vc: UIViewController, title: String, icon: UIImage? = nil, iconSelected: UIImage? = nil) -> UINavigationController {
         let vc = vc
         vc.title = title
-        return UINavigationController(rootViewController: vc)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.prefersLargeTitles = true
+        nav.tabBarItem = .init(title: title,
+                               image: icon,
+                               selectedImage: iconSelected)
+        return nav
     }
 }

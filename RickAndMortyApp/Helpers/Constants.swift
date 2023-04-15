@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Constants {
+    static let shared = Constants()
+    
+    let getAllCharacters = "https://rickandmortyapi.com/api/character"
+}

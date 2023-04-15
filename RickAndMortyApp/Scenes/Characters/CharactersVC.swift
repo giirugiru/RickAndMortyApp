@@ -8,9 +8,16 @@
 import UIKit
 
 class CharactersVC: UIViewController {
+    
+    let vm = CharactersVM()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .systemBackground
+        self.title = "Characters"
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: nil)
+        
+        vm.getCharacterList()
     }
 }
