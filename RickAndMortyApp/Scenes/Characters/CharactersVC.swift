@@ -70,7 +70,8 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selected = vm.collectionViewModel[indexPath.row]
-        print(selected.name)
+        let selected = vm.characters[indexPath.row]
+        let vc = CharacterDetailRouter.create(character: selected)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

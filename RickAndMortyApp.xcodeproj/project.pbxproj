@@ -43,6 +43,10 @@
 		E9E72ABD29F0264000DAC505 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E72ABB29F0264000DAC505 /* EpisodeTableViewCell.xib */; };
 		E9E72ABF29F026BC00DAC505 /* EpisodesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72ABE29F026BC00DAC505 /* EpisodesVM.swift */; };
 		E9E72AC129F0272900DAC505 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AC029F0272900DAC505 /* EpisodeModel.swift */; };
+		E9E72AC529F030DE00DAC505 /* CharacterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AC329F030DE00DAC505 /* CharacterDetailVC.swift */; };
+		E9E72AC629F030DE00DAC505 /* CharacterDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E72AC429F030DE00DAC505 /* CharacterDetailVC.xib */; };
+		E9E72AC829F0311F00DAC505 /* CharacterDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AC729F0311F00DAC505 /* CharacterDetailVM.swift */; };
+		E9E72ACA29F0325100DAC505 /* CharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AC929F0325100DAC505 /* CharacterDetailRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,10 @@
 		E9E72ABB29F0264000DAC505 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		E9E72ABE29F026BC00DAC505 /* EpisodesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesVM.swift; sourceTree = "<group>"; };
 		E9E72AC029F0272900DAC505 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		E9E72AC329F030DE00DAC505 /* CharacterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailVC.swift; sourceTree = "<group>"; };
+		E9E72AC429F030DE00DAC505 /* CharacterDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailVC.xib; sourceTree = "<group>"; };
+		E9E72AC729F0311F00DAC505 /* CharacterDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailVM.swift; sourceTree = "<group>"; };
+		E9E72AC929F0325100DAC505 /* CharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouter.swift; sourceTree = "<group>"; };
 		FC94018D43201B78CC80455F /* Pods-RickAndMortyApp-RickAndMortyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyApp-RickAndMortyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyApp-RickAndMortyAppUITests/Pods-RickAndMortyApp-RickAndMortyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +236,7 @@
 		E9E72A8229EAC0DD00DAC505 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E9E72AC229F030BA00DAC505 /* CharacterDetail */,
 				E9E72A8E29EAC28C00DAC505 /* Settings */,
 				E9E72A8D29EAC27700DAC505 /* Episodes */,
 				E9E72A8C29EAC26E00DAC505 /* Locations */,
@@ -325,6 +334,17 @@
 				E9E72ABB29F0264000DAC505 /* EpisodeTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E9E72AC229F030BA00DAC505 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E9E72AC329F030DE00DAC505 /* CharacterDetailVC.swift */,
+				E9E72AC429F030DE00DAC505 /* CharacterDetailVC.xib */,
+				E9E72AC729F0311F00DAC505 /* CharacterDetailVM.swift */,
+				E9E72AC929F0325100DAC505 /* CharacterDetailRouter.swift */,
+			);
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +461,7 @@
 				E9E72A9229EAC2BE00DAC505 /* LocationsVC.xib in Resources */,
 				E9E72A5D29EABC8100DAC505 /* LaunchScreen.storyboard in Resources */,
 				E9E72ABD29F0264000DAC505 /* EpisodeTableViewCell.xib in Resources */,
+				E9E72AC629F030DE00DAC505 /* CharacterDetailVC.xib in Resources */,
 				E9E72AAD29EFD16600DAC505 /* CharacterCollectionViewCell.xib in Resources */,
 				E9E72A5A29EABC8100DAC505 /* Assets.xcassets in Resources */,
 				E9E72AB829F01E6900DAC505 /* LocationTableViewCell.xib in Resources */,
@@ -579,6 +600,7 @@
 				E9E72A5129EABC8000DAC505 /* AppDelegate.swift in Sources */,
 				E9E72AA429EAD8F100DAC505 /* CharacterModel.swift in Sources */,
 				E9E72AAC29EFD16600DAC505 /* CharacterCollectionViewCell.swift in Sources */,
+				E9E72ACA29F0325100DAC505 /* CharacterDetailRouter.swift in Sources */,
 				E9E72AAF29F01B0100DAC505 /* LocationsVM.swift in Sources */,
 				E9E72AB129F01BA600DAC505 /* LocationModel.swift in Sources */,
 				E9E72AA629EFB0F700DAC505 /* DefaultNetworkRouter.swift in Sources */,
@@ -588,9 +610,11 @@
 				E9E72AB329F01C1100DAC505 /* Model+Helpers.swift in Sources */,
 				E9E72AB729F01E6900DAC505 /* LocationTableViewCell.swift in Sources */,
 				E9E72A9D29EAC2EC00DAC505 /* CharactersVC.swift in Sources */,
+				E9E72AC829F0311F00DAC505 /* CharacterDetailVM.swift in Sources */,
 				E9E72AA029EAD33E00DAC505 /* CharactersVM.swift in Sources */,
 				E9E72A9129EAC2BE00DAC505 /* LocationsVC.swift in Sources */,
 				E9E72A8529EAC0F100DAC505 /* Constants.swift in Sources */,
+				E9E72AC529F030DE00DAC505 /* CharacterDetailVC.swift in Sources */,
 				E9E72ABF29F026BC00DAC505 /* EpisodesVM.swift in Sources */,
 				E9E72A9929EAC2D500DAC505 /* SettingsVC.swift in Sources */,
 			);
