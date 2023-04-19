@@ -16,9 +16,9 @@ final class MainTabVC: UITabBarController {
     
     private func setup() {
         setViewControllers([
-        makeVC(vc: CharactersVC(), title: "Characters", icon: UIImage(systemName: "person")),
-        makeVC(vc: LocationsVC(), title: "Locations", icon: UIImage(systemName: "globe")),
-        makeVC(vc: EpisodesVC(), title: "Episodes", icon: UIImage(systemName: "tv"))
+        makeVC(vc: CharactersVC(), title: "Characters", icon: UIImage(named: "ic_character_active")),
+        makeVC(vc: LocationsVC(), title: "Locations", icon: UIImage(named: "ic_locations_active")),
+        makeVC(vc: EpisodesVC(), title: "Episodes", icon: UIImage(named: "ic_episodes_active"))
         ], animated: true)
     }
     

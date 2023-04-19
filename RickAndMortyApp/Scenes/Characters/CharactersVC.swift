@@ -18,17 +18,21 @@ class CharactersVC: UIViewController {
         self.view.backgroundColor = .systemBackground
         self.title = "Characters"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: nil)
+        
         setup()
+        fetch()
     }
     
     private func setup() {
+        vm.delegate = self
         collectionView.register(
             UINib(nibName: CharacterCollectionViewCell.nib(), bundle: nil),
             forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
-
-        vm.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    private func fetch() {
         vm.getCharacterList()
     }
 }
@@ -60,13 +64,14 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.cellIdentifier, for: indexPath) as? CharacterCollectionViewCell else { return UICollectionViewCell() }
+        
         cell.updateData(model: vm.collectionViewModel[indexPath.row])
-        cell.backgroundColor = UIColor.red
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selected = vm.collectionViewModel[indexPath.row]
-        print(selected.name)
+        let selected = vm.characters[indexPath.row]
+        let vc = CharacterDetailRouter.create(character: selected)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
