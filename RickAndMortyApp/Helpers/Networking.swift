@@ -50,33 +50,6 @@ final class NetworkManager: NetworkService {
     }
 }
 
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
-}
-
 internal class NetworkLogger {
     
     static let shared = NetworkLogger()
@@ -110,34 +83,3 @@ internal class NetworkLogger {
         }
     }
 }
-
-//internal extension DataResponse {
-//    func prettyPrinted() {
-//        guard let r = self.request, let d = self.data else {
-//            print("🙈🙈🙈 NOTHING HERE 🙈🙈🙈")
-//            return }
-//        print("🍄🍄🍄 REQUEST ----> \(r.url?.absoluteString ?? "")")
-//        print("🛠🛠🛠 METHOD ----> \(r.httpMethod ?? "")")
-//        print("💆🏻‍♀️💆🏻‍♀️💆🏻‍♀️ HEADER ----> \(r.allHTTPHeaderFields ?? [:])")
-//        if let body = r.httpBody, let x = String(data: body, encoding: .utf8) {
-//            print("💃🏻💃🏻💃🏻 BODY ----> \(x)")
-//        }
-//
-//        if let jsonData = try? JSONSerialization.jsonObject(with: d, options: []) as? NSDictionary {
-//            var swiftDict: [String: Any] = [:]
-//            for key in jsonData.allKeys {
-//                let stringKey = key as? String
-//                if let key = stringKey, let keyValue = jsonData.value(forKey: key) {
-//                    swiftDict[key] = keyValue
-//                }
-//            }
-//
-//            if let jsonDict = try? JSONSerialization.data(withJSONObject: swiftDict, options: .prettyPrinted),
-//               let theJSONText = String(data: jsonDict, encoding: String.Encoding.ascii) {
-//                print("🐶🦊🐱🐷🐸 RESPONSE ---->")
-//                print(theJSONText)
-//                print("<---- END 🐶🦊🐱🐷🐸")
-//            }
-//        }
-//    }
-//}

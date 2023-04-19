@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct CharacterCellModel {
     var imageUrl: String
@@ -37,5 +38,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     public func updateData(model: CharacterCellModel) {
         nameLabel.text = model.name
         speciesLabel.text = model.species
+        if let url = URL(string: model.imageUrl) {
+            imageView.kf.setImage(with: url)
+        }
     }
 }

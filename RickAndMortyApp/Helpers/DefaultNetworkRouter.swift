@@ -40,10 +40,12 @@ enum DefaultNetworkRouter: NetworkRouter {
     
     var method: String {
         switch self {
-        case .getCharacters, .getFilteredCharacters, .getEpisodes, .getLocations:
-            return HTTPMethod.get.rawValue
         default:
-            return HTTPMethod.post.rawValue
+            return HTTPMethod.get.rawValue
+//        case .getCharacters, .getFilteredCharacters, .getEpisodes, .getLocations:
+//            return HTTPMethod.get.rawValue
+//        default:
+//            return HTTPMethod.post.rawValue
         }
     }
     

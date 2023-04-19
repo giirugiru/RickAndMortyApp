@@ -22,7 +22,9 @@ class CharactersVC: UIViewController {
     }
     
     private func setup() {
-        collectionView.register(UINib(nibName: CharacterCollectionViewCell.nib(), bundle: nil), forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
+        collectionView.register(
+            UINib(nibName: CharacterCollectionViewCell.nib(), bundle: nil),
+            forCellWithReuseIdentifier: CharacterCollectionViewCell.cellIdentifier)
 
         vm.delegate = self
         collectionView.delegate = self
@@ -33,7 +35,6 @@ class CharactersVC: UIViewController {
 
 extension CharactersVC: CharactersVMDelegate {
     func updateData() {
-        print("DATA UPDATED")
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -49,10 +50,9 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-        return CGSize(width: size, height: size)
+        let size: CGFloat = (collectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: 250)
     }
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vm.collectionViewModel.count
@@ -63,5 +63,10 @@ extension CharactersVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell.updateData(model: vm.collectionViewModel[indexPath.row])
         cell.backgroundColor = UIColor.red
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selected = vm.collectionViewModel[indexPath.row]
+        print(selected.name)
     }
 }
