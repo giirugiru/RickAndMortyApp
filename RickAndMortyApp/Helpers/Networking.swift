@@ -7,14 +7,40 @@
 
 import Foundation
 
+protocol NetworkRouter {
+    var baseURL: String { get }
+    var path: String { get }
+    var queryItems: [URLQueryItem] { get }
+    var method: String { get }
+    func generateURLRequest() -> URLRequest?
+}
+
 protocol NetworkService {
-    func fetchData<T: Decodable>(urlString: String, completion: @escaping (Result<T,Error>) -> Void)
+    func request<T: Decodable>(api: NetworkRouter, completion: @escaping (Result<T,Error>) -> Void)
+}
+
+public enum HTTPMethod: String {
+    case get     = "GET"
+    case post    = "POST"
+    case put     = "PUT"
+    case patch   = "PATCH"
+    case delete  = "DELETE"
+}
+
+fileprivate enum NetworkError: Error {
+    case unabeToGenerateRequest
+    case invalidEndpoint
+    case parsingError
 }
 
 final class NetworkManager: NetworkService {
-    func fetchData<T: Decodable>(urlString: String, completion: @escaping (Result<T,Error>) -> Void) {
-        guard let url = URL(string: urlString) else { return } 
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+    func request<T: Decodable>(api: NetworkRouter, completion: @escaping (Result<T,Error>) -> Void) {
+        guard let request = api.generateURLRequest() else {
+            completion(.failure(NetworkError.invalidEndpoint))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error { completion(.failure(error)); return }
             completion( Result{ try JSONDecoder().decode(T.self, from: data!) })
         }.resume()

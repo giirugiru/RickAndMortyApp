@@ -27,6 +27,8 @@
 		E9E72A9E29EAC2EC00DAC505 /* CharactersVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E72A9C29EAC2EC00DAC505 /* CharactersVC.xib */; };
 		E9E72AA029EAD33E00DAC505 /* CharactersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72A9F29EAD33E00DAC505 /* CharactersVM.swift */; };
 		E9E72AA429EAD8F100DAC505 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AA329EAD8F100DAC505 /* CharacterModel.swift */; };
+		E9E72AA629EFB0F700DAC505 /* DefaultNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AA529EFB0F700DAC505 /* DefaultNetworkRouter.swift */; };
+		E9E72AA829EFBAF100DAC505 /* QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AA729EFBAF100DAC505 /* QueryParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E9E72A9C29EAC2EC00DAC505 /* CharactersVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersVC.xib; sourceTree = "<group>"; };
 		E9E72A9F29EAD33E00DAC505 /* CharactersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVM.swift; sourceTree = "<group>"; };
 		E9E72AA329EAD8F100DAC505 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		E9E72AA529EFB0F700DAC505 /* DefaultNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkRouter.swift; sourceTree = "<group>"; };
+		E9E72AA729EFBAF100DAC505 /* QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E72AA329EAD8F100DAC505 /* CharacterModel.swift */,
+				E9E72AA729EFBAF100DAC505 /* QueryParameters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			children = (
 				E9E72A8429EAC0F100DAC505 /* Constants.swift */,
 				E9E72A8629EAC0F900DAC505 /* Networking.swift */,
+				E9E72AA529EFB0F700DAC505 /* DefaultNetworkRouter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -360,9 +366,11 @@
 			files = (
 				E9E72A9529EAC2CA00DAC505 /* EpisodesVC.swift in Sources */,
 				E9E72A8929EAC15500DAC505 /* MainTabVC.swift in Sources */,
+				E9E72AA829EFBAF100DAC505 /* QueryParameters.swift in Sources */,
 				E9E72A8729EAC0F900DAC505 /* Networking.swift in Sources */,
 				E9E72A5129EABC8000DAC505 /* AppDelegate.swift in Sources */,
 				E9E72AA429EAD8F100DAC505 /* CharacterModel.swift in Sources */,
+				E9E72AA629EFB0F700DAC505 /* DefaultNetworkRouter.swift in Sources */,
 				E9E72A5329EABC8000DAC505 /* SceneDelegate.swift in Sources */,
 				E9E72A9D29EAC2EC00DAC505 /* CharactersVC.swift in Sources */,
 				E9E72AA029EAD33E00DAC505 /* CharactersVM.swift in Sources */,

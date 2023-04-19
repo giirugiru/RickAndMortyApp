@@ -15,9 +15,22 @@ class CharactersVC: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         self.title = "Characters"
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: nil)
-        
+        setup()
+    }
+    
+    private func setup() {
+        vm.delegate = self
         vm.getCharacterList()
+    }
+}
+
+extension CharactersVC: CharactersVMDelegate {
+    func updateData() {
+        print("DATA UPDATED")
+    }
+    
+    func noticeError() {
+        print("SOMETHING WRONG BRUH")
     }
 }

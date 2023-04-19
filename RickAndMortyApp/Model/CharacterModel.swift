@@ -30,7 +30,7 @@ struct CharacterModel: Codable {
     let id: Int?
     let name: String?
     let status: StatusModel?
-    let species: SpeciesModel?
+    let species: String?
     let type: String?
     let gender: Gender?
     let origin, location: LocationModel?
@@ -50,11 +50,6 @@ enum Gender: String, Codable {
 struct LocationModel: Codable {
     let name: String?
     let url: String?
-}
-
-enum SpeciesModel: String, Codable {
-    case alien = "Alien"
-    case human = "Human"
 }
 
 enum StatusModel: String, Codable {
