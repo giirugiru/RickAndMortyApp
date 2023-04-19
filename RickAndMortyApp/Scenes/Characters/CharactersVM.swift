@@ -13,6 +13,7 @@ protocol CharactersVMDelegate: AnyObject {
 }
 
 class CharactersVM {
+    
     private let service: NetworkService
     weak var delegate: CharactersVMDelegate?
     
@@ -30,7 +31,7 @@ class CharactersVM {
             case .success(let t):
                 self?.characters = t.results ?? []
                 self?.prepareCollectionViewData()
-            case .failure(let err):
+            case .failure(_):
                 self?.delegate?.noticeError()
             }
         }
@@ -43,8 +44,8 @@ class CharactersVM {
             switch result {
             case .success(let t):
                 self?.characters = t.results ?? []
-                self?.delegate?.updateData()
-            case .failure(let err):
+                self?.prepareCollectionViewData()
+            case .failure(_):
                 self?.delegate?.noticeError()
             }
         }
