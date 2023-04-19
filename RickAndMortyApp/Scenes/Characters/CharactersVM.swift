@@ -20,13 +20,17 @@ class CharactersVM {
         self.service = service
     }
     
+    var characters: [CharacterModel] = []
+    var collectionViewModel: [CharacterCellModel] = []
+    
     func getCharacterList() {
         service.request(api: DefaultNetworkRouter.getCharacters)
         { [weak self] (result: Result<CharacterBaseModel,Error>) in
             switch result {
-            case .success(let success):
-                self?.delegate?.updateData()
-            case .failure(let failure):
+            case .success(let t):
+                self?.characters = t.results ?? []
+                self?.prepareCollectionViewData()
+            case .failure(let err):
                 self?.delegate?.noticeError()
             }
         }
@@ -37,11 +41,22 @@ class CharactersVM {
         service.request(api: DefaultNetworkRouter.getFilteredCharacters(param: param))
         { [weak self] (result: Result<CharacterBaseModel,Error>) in
             switch result {
-            case .success(let success):
+            case .success(let t):
+                self?.characters = t.results ?? []
                 self?.delegate?.updateData()
-            case .failure(let failure):
+            case .failure(let err):
                 self?.delegate?.noticeError()
             }
         }
+    }
+    
+    private func prepareCollectionViewData() {
+        let model: [CharacterCellModel] = characters.map { c in
+            return .init(imageUrl: c.image ?? "",
+                         name: c.name ?? "",
+                         species: c.species ?? "")
+        }
+        collectionViewModel = model
+        self.delegate?.updateData()
     }
 }
