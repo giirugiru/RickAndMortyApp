@@ -12,7 +12,6 @@ protocol CharactersVMDelegate: AnyObject {
     func noticeError()
 }
 
-
 class CharactersVM {
     private let service: NetworkService
     weak var delegate: CharactersVMDelegate?
