@@ -16,6 +16,7 @@ struct CharacterCellModel {
 
 class CharacterCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
@@ -32,6 +33,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bgView.layer.cornerRadius = 20
+        bgView.backgroundColor = .systemGray5
     }
     
     public func updateData(model: CharacterCellModel) {
