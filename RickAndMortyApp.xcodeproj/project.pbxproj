@@ -47,6 +47,7 @@
 		E9E72AC629F030DE00DAC505 /* CharacterDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E72AC429F030DE00DAC505 /* CharacterDetailVC.xib */; };
 		E9E72AC829F0311F00DAC505 /* CharacterDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AC729F0311F00DAC505 /* CharacterDetailVM.swift */; };
 		E9E72ACA29F0325100DAC505 /* CharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72AC929F0325100DAC505 /* CharacterDetailRouter.swift */; };
+		E9E72ACC29F0E8D000DAC505 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E72ACB29F0E8D000DAC505 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		E9E72AC429F030DE00DAC505 /* CharacterDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailVC.xib; sourceTree = "<group>"; };
 		E9E72AC729F0311F00DAC505 /* CharacterDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailVM.swift; sourceTree = "<group>"; };
 		E9E72AC929F0325100DAC505 /* CharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouter.swift; sourceTree = "<group>"; };
+		E9E72ACB29F0E8D000DAC505 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FC94018D43201B78CC80455F /* Pods-RickAndMortyApp-RickAndMortyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyApp-RickAndMortyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyApp-RickAndMortyAppUITests/Pods-RickAndMortyApp-RickAndMortyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +254,7 @@
 				E9E72A8429EAC0F100DAC505 /* Constants.swift */,
 				E9E72A8629EAC0F900DAC505 /* Networking.swift */,
 				E9E72AA529EFB0F700DAC505 /* DefaultNetworkRouter.swift */,
+				E9E72ACB29F0E8D000DAC505 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				E9E72AC829F0311F00DAC505 /* CharacterDetailVM.swift in Sources */,
 				E9E72AA029EAD33E00DAC505 /* CharactersVM.swift in Sources */,
 				E9E72A9129EAC2BE00DAC505 /* LocationsVC.swift in Sources */,
+				E9E72ACC29F0E8D000DAC505 /* Extensions.swift in Sources */,
 				E9E72A8529EAC0F100DAC505 /* Constants.swift in Sources */,
 				E9E72AC529F030DE00DAC505 /* CharacterDetailVC.swift in Sources */,
 				E9E72ABF29F026BC00DAC505 /* EpisodesVM.swift in Sources */,
@@ -772,6 +776,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;

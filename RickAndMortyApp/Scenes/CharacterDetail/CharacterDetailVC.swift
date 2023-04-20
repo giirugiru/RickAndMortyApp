@@ -62,7 +62,7 @@ extension CharacterDetailVC: CharacterDetailVMDelegate {
         self.dateCreatedLabel.text = "Created\n\(model.created)"
     }
     
-    func noticeError() {
-        
+    func noticeError(error: Error) {
+        makeToast(error: error)
     }
 }

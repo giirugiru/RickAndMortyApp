@@ -43,8 +43,8 @@ extension EpisodesVC: EpisodesVMDelegate {
         }
     }
     
-    func noticeError() {
-        
+    func noticeError(error: Error) {
+        makeToast(error: error)
     }
 }
 

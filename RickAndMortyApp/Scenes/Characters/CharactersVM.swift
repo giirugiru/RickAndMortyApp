@@ -9,7 +9,7 @@ import Foundation
 
 protocol CharactersVMDelegate: AnyObject {
     func updateData()
-    func noticeError()
+    func noticeError(error: Error)
 }
 
 class CharactersVM {
@@ -31,8 +31,8 @@ class CharactersVM {
             case .success(let t):
                 self?.characters = t.results ?? []
                 self?.prepareCollectionViewData()
-            case .failure(_):
-                self?.delegate?.noticeError()
+            case .failure(let err):
+                self?.delegate?.noticeError(error: err)
             }
         }
     }
@@ -45,8 +45,8 @@ class CharactersVM {
             case .success(let t):
                 self?.characters = t.results ?? []
                 self?.prepareCollectionViewData()
-            case .failure(_):
-                self?.delegate?.noticeError()
+            case .failure(let err):
+                self?.delegate?.noticeError(error: err)
             }
         }
     }

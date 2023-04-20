@@ -18,7 +18,6 @@ class CharactersVC: UIViewController {
         self.view.backgroundColor = .systemBackground
         self.title = "Characters"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: nil)
-        
         setup()
         fetch()
     }
@@ -44,8 +43,8 @@ extension CharactersVC: CharactersVMDelegate {
         }
     }
     
-    func noticeError() {
-        print("SOMETHING WRONG BRUH")
+    func noticeError(error: Error) {
+        makeToast(error: error)
     }
 }
 

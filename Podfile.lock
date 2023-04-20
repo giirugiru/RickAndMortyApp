@@ -1,16 +1,20 @@
 PODS:
   - Kingfisher (7.6.2)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher
+  - Toast-Swift
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 733b362c8fcca1d89724289e13d956c6224f138e
+PODFILE CHECKSUM: 7772552c60d2d15ef01ff21c29902cff17bb34e4
 
 COCOAPODS: 1.12.1

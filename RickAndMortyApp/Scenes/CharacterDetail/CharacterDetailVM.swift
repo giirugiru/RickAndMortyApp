@@ -9,7 +9,7 @@ import Foundation
 
 protocol CharacterDetailVMDelegate: AnyObject {
     func updateData(model: CharacterDetailVCModel)
-    func noticeError()
+    func noticeError(error: Error)
 }
 
 class CharacterDetailVM {
@@ -20,7 +20,7 @@ class CharacterDetailVM {
     
     func getCharacterDetail() {
         guard let character else {
-            delegate?.noticeError()
+            delegate?.noticeError(error: NSError(domain: "Failed to get CharacterDetail", code: 999999))
             return }
         
         let model = CharacterDetailVCModel(
