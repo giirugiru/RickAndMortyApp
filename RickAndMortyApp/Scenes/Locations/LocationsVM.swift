@@ -9,7 +9,7 @@ import Foundation
 
 protocol LocationsVMDelegate: AnyObject {
     func updateData()
-    func noticeError()
+    func noticeError(error: Error)
 }
 
 class LocationsVM {
@@ -31,9 +31,8 @@ class LocationsVM {
             case .success(let t):
                 self?.locations = t.results ?? []
                 self?.prepareTableViewData()
-            case .failure(_):
-                self?.delegate?.noticeError()
-                self?.prepareTableViewData()
+            case .failure(let err):
+                self?.delegate?.noticeError(error: err)
             }
         }
     }

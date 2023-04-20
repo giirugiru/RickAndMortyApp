@@ -42,8 +42,8 @@ extension LocationsVC: LocationsVMDelegate {
         }
     }
     
-    func noticeError() {
-        
+    func noticeError(error: Error) {
+        makeToast(error: error)
     }
 }
 

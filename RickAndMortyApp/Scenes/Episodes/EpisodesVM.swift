@@ -9,7 +9,7 @@ import Foundation
 
 protocol EpisodesVMDelegate: AnyObject {
     func updateData()
-    func noticeError()
+    func noticeError(error: Error)
 }
 
 class EpisodesVM {
@@ -31,9 +31,8 @@ class EpisodesVM {
             case .success(let t):
                 self?.episodes = t.results ?? []
                 self?.prepareTableViewData()
-            case .failure(_):
-                self?.delegate?.noticeError()
-                self?.prepareTableViewData()
+            case .failure(let err):
+                self?.delegate?.noticeError(error: err)
             }
         }
     }

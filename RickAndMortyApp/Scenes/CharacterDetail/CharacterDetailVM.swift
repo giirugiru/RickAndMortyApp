@@ -7,8 +7,33 @@
 
 import Foundation
 
+protocol CharacterDetailVMDelegate: AnyObject {
+    func updateData(model: CharacterDetailVCModel)
+    func noticeError(error: Error)
+}
+
 class CharacterDetailVM {
     
     var character: CharacterModel?
 
+    weak var delegate: CharacterDetailVMDelegate?
+    
+    func getCharacterDetail() {
+        guard let character else {
+            delegate?.noticeError(error: NSError(domain: "Failed to get CharacterDetail", code: 999999))
+            return }
+        
+        let model = CharacterDetailVCModel(
+            name: character.name ?? "",
+            imageUrl: character.image ?? "",
+            status: character.status?.rawValue ?? "",
+            gender: character.gender?.rawValue ?? "",
+            species: character.species ?? "",
+            created: character.created ?? "",
+            origin: character.origin?.name ?? "",
+            location: character.location?.name ?? "",
+            episode: character.episode ?? [])
+        
+        delegate?.updateData(model: model)
+    }
 }
